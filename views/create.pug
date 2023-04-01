@@ -1,0 +1,21 @@
+extends layout.pug 
+
+block content 
+    .wrapper 
+        .create-block
+            h1 Create wiki 
+
+            if error 
+                p.error Error.
+
+            if success  
+                p.success Success.
+
+            form.form(action='/create' method='POST')
+                label Title 
+                input.input(type='text' name='title')
+
+                label Description 
+                textarea.input(type='text' name='description')
+
+                button.btn.create-btn Create Wiki

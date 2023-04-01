@@ -1,0 +1,13 @@
+extends layout.pug 
+
+block content 
+    .wrapper 
+        .archive-block
+            if wikis.length
+                each wiki in wikis 
+                    .archive-wrapper
+                        h1.archive #{wiki.title}
+                        p.archive-description #{wiki.description}
+
+            else 
+                p No posts yet

@@ -1,0 +1,19 @@
+extends layout.pug 
+
+block content 
+    .wrapper 
+        .wiki-block
+            h1 All Wikis 
+
+            if deleted 
+                p.error Deleted
+
+
+            if wikis.length
+                each wiki in wikis 
+                    .wiki-wrapper
+                        a.wiki(href=`/wiki/${ wiki.id }`) #{wiki.title}
+                        a.delete(href=`/wiki/${ wiki.id }/delete`)  delete
+
+            else 
+                p No posts yet
